@@ -1,0 +1,219 @@
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SUITE-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Freesentation-5Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-5Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Freesentation-6SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-6SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Freesentation-7Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-7Bold.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.all {
+    font-family: 'Freesentation-6SemiBold', sans-serif;
+}
+
+.click {
+    cursor: pointer;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 70%;
+    overflow: hidden;
+}
+
+/* header */
+.head-box {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: #0066ff;
+}
+
+.head-text {
+    margin: 0 2%;
+    color: #ffffff;
+    font-size: 22px;
+    align-items: center;
+    display: flex;
+}
+
+.head-text-img {
+    background-image: url(./asset/logo2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.header-right-text-box {
+    margin-right: 80px;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height: 70px;
+}
+
+.header-right-text {
+    margin-right: 55px;
+    font-size: 22px;
+    align-items: center;
+    display: flex;
+    color: #ffffff;
+    transition: 0.4s;
+}
+
+.header-right-profile {
+    margin-right: 35px;
+    align-items: center;
+    display: flex;
+    color: #ffffff;
+    position: relative;
+}
+
+.header-right-image-box {
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    height: 70px;
+}
+
+.header-right-text:hover {
+    transform: translate(0, -5px);
+}
+
+/* section */
+
+.profile-menu {
+    width: 104px;
+    height: 71px;
+    background-color: #ffffff;
+    z-index: 2;
+    border-radius: 5px;
+    top: 60px;
+    right: 30px;
+    position: absolute;
+    justify-content: center;
+}
+
+.profile-menu-item {
+    line-height: 35px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.eat-date-container {
+    width: 100%;
+    height: 20px;
+    font-size: 30px;
+    margin-top: 50px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.angle-left {
+    margin-right: 10px;
+    font-size: 20px;
+    margin-top: 4px;
+}
+
+.angle-right {
+    margin-left: 10px;
+    font-size: 20px;
+    margin-top: 4px;
+}
+
+.eat-value {
+    white-space: pre-wrap;
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.eat-value-container {
+    display: flex;
+    justify-content: space-around;
+    height: 700px;
+    margin: 30px auto 0;
+}
+
+.eat-value-box {
+    width: 500px;
+    height: 550px;
+    margin: 20px;
+    background-color: whitesmoke;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.eat-value-title {
+    color: black;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.allergy {
+    margin-top: -50px;
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 996px) {
+    .eat-value-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .eat-value-box {
+        width: 80%;
+        margin: 10px 0;
+    }
+}

@@ -1,0 +1,63 @@
+:root {
+  --BG_COLOR: #000000; /* 원하는 배경색으로 변경하세요 */
+  --WHITE: #ffffff; /* 필요한 경우 다른 변수들도 여기에서 정의하세요 */
+}
+
+@font-face {
+  font-family: 'Freesentation-5Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-5Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+.react-datepicker-wrapper {
+  display: flex !important;
+  width: 100% !important;
+}
+
+.react-datepicker__input-container {
+  display: flex !important;
+  width: 100% !important;
+}
+
+.react-datepicker {
+  font-family: 'Freesentation-5Medium', sans-serif;
+  border: none;
+  border-radius: 0;
+}
+
+.react-datepicker .react-datepicker__header {
+  background-color: #E3E7FF;
+  color: var(--WHITE);
+  border-bottom: none;
+  border-radius: 0;
+}
+
+.react-datepicker .react-datepicker__header .react-datepicker__day-names {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.react-datepicker .react-datepicker__header .react-datepicker__day-names .react-datepicker__day-name {
+  color: #5b5b5b;
+  width: 36px;
+}
+
+.react-datepicker .react-datepicker__triangle {
+  display: none;
+}
+
+.react-datepicker__day--outside-month {
+  cursor: default;
+  visibility: hidden;
+}
+
+.xi-angle-left {
+  color: var(--BG_COLOR);
+}
+
+.xi-angle-right {
+  color: var(--BG_COLOR);
+}

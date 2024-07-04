@@ -1,0 +1,258 @@
+/* 폰트 */
+
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+.all {
+    font-family: 'Freesentation-6SemiBold', sans-serif;
+}
+
+@font-face {
+    font-family: 'SUITE-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Freesentation-5Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-5Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Freesentation-6SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-6SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Freesentation-8ExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* a태그 */
+a {
+    all: unset;
+}
+
+.click {
+    cursor: pointer;
+}
+
+a:link,
+a:visited,
+a:active,
+a:hover {
+    text-decoration: none;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 70%;
+    overflow: hidden;
+}
+
+/* header */
+.head-box {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: #0066ff;
+}
+
+.head-text {
+    margin: 0 2%;
+    color: #ffffff;
+    font-size: 22px;
+    align-items: center;
+    display: flex;
+}
+
+.head-text-img {
+    background-image: url(./asset/logo2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.header-right-text-box {
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height: 70px;
+}
+
+.header-right-text {
+    margin-right: 55px;
+    font-size: 22px;
+    align-items: center;
+    display: flex;
+    color: #ffffff;
+    transition: 0.4s;
+}
+
+.header-right-profile {
+    margin-right: 35px;
+    align-items: center;
+    display: flex;
+    color: #ffffff;
+    position: relative;
+}
+
+.header-right-image-box {
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    height: 70px;
+}
+
+.header-right-text:hover {
+    transform: translate(0, -5px);
+}
+
+/* section */
+
+.profile-menu {
+    width: 104px;
+    height: 71px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    top: 60px;
+    left: 1780px;
+    position: absolute;
+    font-family: 'Freesentation-5Medium';
+    justify-content: center;
+}
+
+.profile-menu-item {
+    line-height: 35px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.main-box {
+    height: 800px;
+    width: 100%;
+    margin-top: -390px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-login-box {
+    box-shadow: 0 0 10px #b1b1b1;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    width: 50%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
+
+.main-login-text-box-right {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.main-login-title {
+    font-size: 64px;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #0057FF;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    position: relative;
+}
+
+.google-logo,
+.github-logo {
+    width: 120px;
+    height: 120px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.google-logo {
+    background-image: url(./asset/google_logo.png);
+}
+
+.github-logo {
+    background-image: url(./asset/github_logo.png);
+}
+
+.google-logo:hover,
+.github-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.logo-text {
+    display: none;
+    position: absolute;
+    top: 130px;
+    font-size: 36px;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #000000;
+}
+
+.google-logo:hover .logo-text,
+.github-logo:hover .logo-text {
+    display: block;
+}
+
+.ban {
+    width: 1px;
+    height: 150px;
+    background-color: #000000;
+    margin: 0 20px;
+}
