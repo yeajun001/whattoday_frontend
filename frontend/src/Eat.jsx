@@ -99,7 +99,7 @@ const Eat = () => {
     
           if (email) {
             try {
-              const response = await axios.get('https://whattoday.kro.kr:3001/getimg', {
+              const response = await axios.get('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/getimg', {
                 params: { email },
                 responseType: 'blob',
               });
@@ -122,7 +122,7 @@ const Eat = () => {
           try {
             const email = getEmailFromSessionStorage();
             console.log(`Fetching data for date: ${date}`); // 날짜 확인용 콘솔 로그
-            const response = await axios.get(`https://whattoday.kro.kr:3001/mealdata?email=${email}&date=${date}`);
+            const response = await axios.get(`https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/mealdata?email=${email}&date=${date}`);
             console.log('Response data:', response.data); // 응답 데이터 확인용 콘솔 로그
             const data = response.data;
     

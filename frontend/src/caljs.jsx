@@ -45,7 +45,7 @@ const Calendar = () => {
   useEffect(() => {
     const fetchSchoolSchedules = async (email) => {
       try {
-        const response = await axios.get("https://whattoday.kro.kr:3001/schooldata", {
+        const response = await axios.get("https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/schooldata", {
           params: { email }
         });
         const data = response.data.SchoolSchedule[1].row;
@@ -58,7 +58,7 @@ const Calendar = () => {
   
     const fetchPersonalSchedules = async (email) => {
       try {
-        const response = await axios.get("https://whattoday.kro.kr:3001/personaldata", {
+        const response = await axios.get("https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/personaldata", {
           params: { email }
         });
         const schedulesByDate = processScheduleData(response.data, true);
@@ -242,7 +242,7 @@ const Calendar = () => {
     
     try {
         setLoading(true);
-        const response = await axios.post('https://whattoday.kro.kr:3001/upload', formData, {
+        const response = await axios.post('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/upload', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },
@@ -264,7 +264,7 @@ const fetchImageForDate = async (date, email) => {
         const email = getEmailFromSessionStorage();
         setLoading(true);
         const formattedDate = formatDate(date, true);
-        const response = await axios.get(`https://whattoday.kro.kr:3001/image?date=${formattedDate}&email=${email}`);
+        const response = await axios.get(`https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/image?date=${formattedDate}&email=${email}`);
         setImageSrc(response.data.imagePath);
     } catch (error) {
         console.error('Error fetching image:', error.response ? error.response.data : error.message);
@@ -322,7 +322,7 @@ const fetchImageForDate = async (date, email) => {
       const email = getEmailFromSessionStorage();
       if (!email) return; // 이메일이 없으면 함수 종료
   
-      const url = `https://whattoday.kro.kr:3001/diary?date=${date}&email=${email}`;
+      const url = `https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/diary?date=${date}&email=${email}`;
       console.log('Request URL:', url); // 요청 URL 로그 출력
   
       const response = await fetch(url);
@@ -342,7 +342,7 @@ const fetchImageForDate = async (date, email) => {
   
   const addDiaryEntry = async (date, content, email) => {
     try {
-      const response = await fetch('https://whattoday.kro.kr:3001/diary/add', {
+      const response = await fetch('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/diary/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -368,7 +368,7 @@ const fetchImageForDate = async (date, email) => {
       console.log('Request Body:', requestBody); // 요청 본문 로그 출력
   
       console.log('Before fetch call');
-      const response = await fetch('https://whattoday.kro.kr:3001/diary/update', {
+      const response = await fetch('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/diary/update', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -427,7 +427,7 @@ const fetchImageForDate = async (date, email) => {
         {modalOpen && (
           <Modal2 onClose={closeModal}>
               <div className={styles['Diary-background']}>
-                  {imageSrc && <img width="100%" src={`https://whattoday.kro.kr:3001${imageSrc}`} alt="Preview" className={styles.image} />}
+                  {imageSrc && <img width="100%" src={`https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app:3001${imageSrc}`} alt="Preview" className={styles.image} />}
                   <label htmlFor="file">
                     <div className={styles["btn-upload"]}><img src={uploadIcon} alt="upload" className={styles.uploadbtnimg}></img>업로드</div>
                   </label>

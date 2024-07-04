@@ -56,7 +56,7 @@ const ProfileModal = ({ isOpen, onClose, onSave }) => {
     if (!email) return;
   
     try {
-      const response = await axios.post('https://whattoday.kro.kr:3001/uploadimg', formData, {
+      const response = await axios.post('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/uploadimg', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Email': email

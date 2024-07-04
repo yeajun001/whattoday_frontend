@@ -43,7 +43,7 @@ function Mainlin() {
     
           if (email) {
             try {
-              const response = await axios.get('https://whattoday.kro.kr:3001/getimg', {
+              const response = await axios.get('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/getimg', {
                 params: { email },
                 responseType: 'blob',
               });

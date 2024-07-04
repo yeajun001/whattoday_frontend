@@ -71,7 +71,7 @@ function Cal() {
     
         if (email) {
           try {
-            const response = await axios.get('https://whattoday.kro.kr:3001/getimg', {
+            const response = await axios.get('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/getimg', {
               params: { email },
               responseType: 'blob',
             });
@@ -97,7 +97,7 @@ function Cal() {
       }
     
       try {
-        const response = await axios.post('https://whattoday.kro.kr:3001/personal-addschedule', {
+        const response = await axios.post('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/personal-addschedule', {
           email: email,
           calendar_name: calendarName,
           calendar_date: calendarDate,
@@ -135,7 +135,7 @@ function Cal() {
 
     useEffect(() => {
       const email = getEmailFromSessionStorage();
-      axios.get('https://whattoday.kro.kr:3001/personaldata', { params: { email } })
+      axios.get('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/personaldata', { params: { email } })
         .then(response => {
           const formattedSchedules = response.data.map(item => {
             const dateStr = item.calendar_date;
@@ -206,7 +206,7 @@ function Cal() {
     
     const confirmDelete = async () => {
       try {
-        const response = await axios.post('https://whattoday.kro.kr:3001/personal-delschedule', {
+        const response = await axios.post('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/personal-delschedule', {
           email: getEmailFromSessionStorage(),
           calendar_name: selectedSchedule.calendar_name,
           calendar_date: selectedSchedule.original_date, // 연도 정보를 포함한 날짜로 삭제 요청
