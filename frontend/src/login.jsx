@@ -29,7 +29,7 @@ const SocialLogin = () => {
 
       const idToken = await google_user.getIdToken();
       try {
-        const response = await axios.post('https://whattoday.kro.kr:3001/login', { idToken });
+        const response = await axios.post('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/login', { idToken });
         console.log(response.data);
         navigate('/mainlin');
       } catch (error) {
@@ -51,7 +51,7 @@ const SocialLogin = () => {
 
       const idToken = await github_user.getIdToken();
       try {
-        const response = await axios.post('https://whattoday.kro.kr:3001/login', { idToken });
+        const response = await axios.post('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/login', { idToken });
         console.log(response.data);
         navigate('/mainlin');
       } catch (error) {
