@@ -170,7 +170,7 @@ const Eat = () => {
                     )}
                     <div className={styles['header-right-profile']} onClick={() => setShowDropdown(!showDropdown)}><div className={styles.click}>
                           <div className={styles['profile-box']}>
-                          {profileImage && (
+                          {imageUrl && (
                             <img
                             className={styles['profile-image']}
                             src={imageUrl || null_image}
