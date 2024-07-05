@@ -267,6 +267,7 @@ const fetchImageForDate = async (date) => {
       const response = await axios.get(`https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/image?date=${formattedDate}&email=${email}`);
       
       const fullImagePath = response.data.imagePath;
+      // 도메인 부분을 제거하고 경로만 추출
       const imageSrc = fullImagePath.replace('https://uploadsdiaryimg.kr.object.ncloudstorage.com', '');
       
       setImageSrc(imageSrc);
@@ -277,6 +278,7 @@ const fetchImageForDate = async (date) => {
       setLoading(false);
   }
 };
+
 
 
 
