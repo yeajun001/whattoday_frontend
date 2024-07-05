@@ -267,7 +267,7 @@ const Calendar = () => {
         
         const fullImagePath = response.data.imagePath;
         // 도메인과 경로를 합쳐서 이미지 src를 만듭니다.
-        const imageSrc = `https://uploadsdiaryimg.kr.object.ncloudstorage.com${fullImagePath}`;
+        const imageSrc = `https://uploadsdiaryimg.kr.object.ncloudstorage.com/post/${fullImagePath}`;
         
         setImageSrc(imageSrc);
     } catch (error) {
