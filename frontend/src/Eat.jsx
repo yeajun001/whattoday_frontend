@@ -13,8 +13,6 @@ const Eat = () => {
 
     const [mealData, setMealData] = useState({ breakfast: '', lunch: '', dinner: '' });
 
-    var date = new Date();
-
     const handleLogout = () => {
         sessionStorage.clear();
         getAuth().signOut();
@@ -96,25 +94,25 @@ const Eat = () => {
       useEffect(() => {
         const fetchImage = async () => {
           const email = getEmailFromSessionStorage();
-    
+      
           if (email) {
             try {
               const response = await axios.get('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/getimg', {
                 params: { email },
-                responseType: 'blob',
               });
-    
-              const imageObjectURL = URL.createObjectURL(response.data);
-              setImageUrl(imageObjectURL);
+      
+              // 서버에서 리디렉션된 URL을 받아와서 설정
+              const imageURL = response.request.responseURL;
+              setImageUrl(imageURL);
             } catch (error) {
               console.error('Error fetching the image:', error);
               setImageUrl(null_image);
             }
           }
         };
-    
+      
         fetchImage();
-      }, []);
+      }, []);      
 
       useEffect(() => {
         const fetchData = async () => {

@@ -219,27 +219,28 @@ const MyPage = () => {
     useEffect(() => {
       const fetchProfileImage = async () => {
         const email = getEmailFromSessionStorage();
-  
+    
         if (!email) {
           console.error('Error: Email not found in session storage.');
           return;
         }
-  
+    
         try {
           console.log(`Fetching image for email: ${email}`); // 디버깅 용도
-          const response = await axios.get(`https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/getimg?email=${encodeURIComponent(email)}`, {
-            responseType: 'blob' // 이미지 데이터를 blob 형태로 받음
+          const response = await axios.get('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/getimg', {
+            params: { email },
           });
-          console.log('Response:', response); // 디버깅 용도
-          const imageUrl = URL.createObjectURL(response.data);
-          setProfileImage(imageUrl);
+    
+          // 서버에서 리디렉션된 URL을 받아와서 설정
+          const imageURL = response.request.responseURL;
+          setProfileImage(imageURL);
         } catch (error) {
           console.error('Error fetching profile image:', error);
         }
       };
     
       fetchProfileImage();
-  }, []);
+    }, []);    
 
     return (
         <div>
