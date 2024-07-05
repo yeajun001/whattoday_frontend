@@ -48,8 +48,7 @@ const Schedule = () => {
                 params: { email },
               });
       
-              // 서버에서 리디렉션된 URL을 받아와서 설정
-              const imageURL = response.request.responseURL;
+              const imageURL = response.data.imagePath;
               setImageUrl(imageURL);
             } catch (error) {
               console.error('Error fetching the image:', error);

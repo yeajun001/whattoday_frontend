@@ -231,9 +231,9 @@ const MyPage = () => {
             params: { email },
           });
     
-          // 서버에서 리디렉션된 URL을 받아와서 설정
-          const imageURL = response.request.responseURL;
-          console.log(imageURL)
+          // JSON 응답에서 imagePath를 받아와서 설정
+          const imageURL = response.data.imagePath;
+          console.log(imageURL);
           setProfileImage(imageURL);
         } catch (error) {
           console.error('Error fetching profile image:', error);
@@ -241,7 +241,8 @@ const MyPage = () => {
       };
     
       fetchProfileImage();
-    }, []);    
+    }, []);
+    
 
     return (
         <div>
