@@ -263,6 +263,9 @@ const Calendar = () => {
         const email = getEmailFromSessionStorage();
         setLoading(true);
         const formattedDate = formatDate(date, true);
+
+        setImageSrc(null);
+
         const response = await axios.get(`https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/image?date=${formattedDate}&email=${email}`);
         
         const fullImagePath = response.data.imagePath;
