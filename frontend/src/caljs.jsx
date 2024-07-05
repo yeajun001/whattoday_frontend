@@ -431,7 +431,7 @@ const Calendar = () => {
         {modalOpen && (
           <Modal2 onClose={closeModal}>
               <div className={styles['Diary-background']}>
-                  {imageSrc && <img width="100%" src={`https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/${imageSrc}`} alt="Preview" className={styles.image} />}
+                  {imageSrc && <img width="100%" src={`${imageSrc}`} alt="Preview" className={styles.image} />}
                   <label htmlFor="file">
                     <div className={styles["btn-upload"]}><img src={uploadIcon} alt="upload" className={styles.uploadbtnimg}></img>업로드</div>
                   </label>
