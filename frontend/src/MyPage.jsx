@@ -259,11 +259,13 @@ const MyPage = () => {
                 <div className={styles['header-right-image-box']}>
                   <div className={styles['header-right-profile']} onClick={() => setShowDropdown(!showDropdown)}><div className={styles.click}>
                         <div className={styles['profile-box']}>
-                        <img
-                            className={styles['main-profile-image']}
-                            src={profileImage}
-                            alt='profile_image'
-                        />
+                        {profileImage && (
+                          <img
+                              className={styles['main-profile-image']}
+                              src={profileImage}
+                              alt='profile_image'
+                          />
+                        )}
                         </div>
                       </div>
                     </div>
@@ -283,12 +285,14 @@ const MyPage = () => {
                       </div>
                   )}
                       <div className={styles['main-profile-box']}>
+                      {profileImage && (
                           <img
                             className={styles['main-profile-image']}
                             src={profileImage}
                             alt='profile_image'
                             onClick={handleOpenModal}
                           />
+                      )}
             </div>
                       <div className={styles['main-profile-name']}>
                       {profile ? (
