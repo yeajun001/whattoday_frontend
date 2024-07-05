@@ -267,7 +267,7 @@ const Calendar = () => {
         
         const fullImagePath = response.data.imagePath;
         // 도메인과 경로를 합쳐서 이미지 src를 만듭니다.
-        const imageSrc = `/post/${fullImagePath}`;
+        const imageSrc = `${fullImagePath}`;
         console.log(imageSrc);
         setImageSrc(imageSrc);
     } catch (error) {
