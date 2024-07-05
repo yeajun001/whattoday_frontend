@@ -233,6 +233,7 @@ const MyPage = () => {
     
           // 서버에서 리디렉션된 URL을 받아와서 설정
           const imageURL = response.request.responseURL;
+          console.log(imageURL)
           setProfileImage(imageURL);
         } catch (error) {
           console.error('Error fetching profile image:', error);
