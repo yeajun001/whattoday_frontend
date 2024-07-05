@@ -251,6 +251,7 @@ function Cal() {
                         </div>
                       </div>  
                     )}
+                    
                     <div className={styles['header-right-profile']} onClick={() => setShowDropdown(!showDropdown)}><div className={styles.click}>
                           <div className={styles['profile-box']}>
                           {imageUrl && (
