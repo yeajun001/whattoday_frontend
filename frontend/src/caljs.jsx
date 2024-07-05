@@ -256,31 +256,28 @@ const Calendar = () => {
     } finally {
         setLoading(false);
     }
-};
+  };
 
-
-const fetchImageForDate = async (date) => {
-  try {
-      const email = getEmailFromSessionStorage();
-      setLoading(true);
-      const formattedDate = formatDate(date, true);
-      const response = await axios.get(`https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/image?date=${formattedDate}&email=${email}`);
-      
-      const fullImagePath = response.data.imagePath;
-      // 도메인 부분을 제거하고 경로만 추출
-      const imageSrc = fullImagePath.replace('https://uploadsdiaryimg.kr.object.ncloudstorage.com', '');
-      
-      setImageSrc(imageSrc);
-  } catch (error) {
-      console.error('Error fetching image:', error.response ? error.response.data : error.message);
-      setImageSrc(null);
-  } finally {
-      setLoading(false);
-  }
-};
-
-
-
+  const fetchImageForDate = async (date) => {
+    try {
+        const email = getEmailFromSessionStorage();
+        setLoading(true);
+        const formattedDate = formatDate(date, true);
+        const response = await axios.get(`https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/image?date=${formattedDate}&email=${email}`);
+        
+        const fullImagePath = response.data.imagePath;
+        // 도메인과 경로를 합쳐서 이미지 src를 만듭니다.
+        const imageSrc = `https://uploadsdiaryimg.kr.object.ncloudstorage.com${fullImagePath}`;
+        
+        setImageSrc(imageSrc);
+    } catch (error) {
+        console.error('Error fetching image:', error.response ? error.response.data : error.message);
+        setImageSrc(null);
+    } finally {
+        setLoading(false);
+    }
+  };
+  
 
   useEffect(() => {
     if (modalOpen) {
