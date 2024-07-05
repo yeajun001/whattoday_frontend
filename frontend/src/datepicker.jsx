@@ -4,8 +4,6 @@ import { getMonth, getYear } from 'date-fns';
 import 'react-datepicker/dist/react-datepicker.css';
 import "./date.css"
 
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import styles from './Cal.module.css';
 
 const currentYear = new Date().getFullYear();

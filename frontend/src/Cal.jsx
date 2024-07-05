@@ -223,6 +223,12 @@ function Cal() {
       handleCloseSchedule();
     };
 
+    const handleDateChange = (date) => {
+      // 선택된 날짜를 로컬 시간대로 변환
+      const localDate = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
+      setCalendarDate(localDate);
+    };
+
     return (
         <div>
             <header className={styles.all}>
@@ -332,7 +338,7 @@ function Cal() {
                         /></div>
                         <div className={styles['modal-sc-date']}>날짜</div>
                         <div className={styles['modal-sc-date-div']}>
-                          <Datapicker onChange={(date) => setCalendarDate(date)}/>
+                          <Datapicker onChange={handleDateChange}/>
                         </div>
                         <div onClick={handleAddSchedule} className={styles.check}><div className={styles.checktext}>저장</div></div>
                         <div onClick={toggleModal} className={styles.cancel}><div className={styles.canceltext}>취소</div></div>
