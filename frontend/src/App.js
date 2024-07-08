@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Main from "./main";
 import Mainlin from "./mainlin";
 import LoginMain from "./loginmain";
@@ -11,7 +11,7 @@ import Eat from "./Eat";
 const App = () => {
 
     return (
-        <BrowserRouter basename="/">
+        <Router>
             <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/mainlin" element={<Mainlin />} />
@@ -21,7 +21,7 @@ const App = () => {
                 <Route path="/Schedule" element={<Schedule />} />
                 <Route path="/Eat" element={<Eat />} />
             </Routes>
-        </BrowserRouter>
+        </Router>
     );
 }
 
