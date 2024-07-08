@@ -47,8 +47,6 @@ const MyPage = () => {
       const [name, setName] = useState('');
       const [selectedSchool, setSelectedSchool] = useState({ value: '', code: '' });
       const [profile, setProfile] = useState(null);
-      const [departments, setDepartments] = useState([]);
-      const [selectedDepartment, setSelectedDepartment] = useState(null);
 
 
     const handleLogout = () => {
@@ -360,15 +358,15 @@ const MyPage = () => {
                                             />
                                       <label htmlFor="department" className={styles.department}>학과명:</label>
                                           <Select
-                                            name="department"
-                                            options={selectedSchool ? departmentOptions[selectedSchool.value] : []}
-                                            onChange={handleDepartmentChange}
-                                            className="department"
-                                            classNamePrefix="department"
-                                            value={selectedDepartment}
-                                            placeholder="--학과를 선택해주세요--"
-                                            isSearchable
-                                            isDisabled={!selectedSchool} // 학교가 선택되지 않으면 비활성화
+                                            // name="department"
+                                            // options={selectedSchool ? departmentOptions[selectedSchool.value] : []}
+                                            // onChange={handleDepartmentChange}
+                                            // className="department"
+                                            // classNamePrefix="department"
+                                            // value={selectedDepartment}
+                                            // placeholder="--학과를 선택해주세요--"
+                                            // isSearchable
+                                            // isDisabled={!selectedSchool}
                                           />
                                       </div>
                                       
