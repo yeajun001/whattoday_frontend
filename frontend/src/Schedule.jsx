@@ -20,21 +20,25 @@ const Schedule = () => {
     };
 
     const getEmailFromSessionStorage = () => {
-        const googleUserEmail = sessionStorage.getItem('googleUseremail');
-        const githubUserEmail = sessionStorage.getItem('githubUseremail');
-      
-        console.log('Google User Email:', googleUserEmail); // 디버깅 용도
-        console.log('GitHub User Email:', githubUserEmail); // 디버깅 용도
-      
-        if (googleUserEmail) {
-          return googleUserEmail;
-        } else if (githubUserEmail) {
-          return githubUserEmail;
-        } else {
-          console.error('오류 발생: 세션 스토리지에 이메일이 없습니다.');
-          return null;
-        }
-      };
+      const googleUserEmail = sessionStorage.getItem('googleUseremail');
+      const githubUserEmail = sessionStorage.getItem('githubUseremail');
+      const defaultEmail = sessionStorage.getItem('email');
+    
+      console.log('Google User Email:', googleUserEmail); // 디버깅 용도
+      console.log('GitHub User Email:', githubUserEmail); // 디버깅 용도
+      console.log('Email', defaultEmail);
+    
+      if (googleUserEmail) {
+        return googleUserEmail;
+      } else if (githubUserEmail) {
+        return githubUserEmail;
+      } else if (defaultEmail) {
+        return defaultEmail;
+      } else {
+        console.error('오류 발생: 세션 스토리지에 이메일이 없습니다.');
+        return null;
+      }
+    };
 
       const [imageUrl, setImageUrl] = useState(null);
 
