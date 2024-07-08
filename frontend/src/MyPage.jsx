@@ -74,12 +74,6 @@ const MyPage = () => {
         fetchSchools(selectedOffice.value, 1);
       }
     }, [selectedOffice]);
-
-    useEffect(() => {
-      if (selectedSchool) {
-        fetchDepartments(selectedSchool.value, 1);
-      }
-    }, [selectedSchool]);
     
     useEffect(() => {
       console.log("선택된 학교 상태 업데이트:", selectedSchool);
@@ -102,34 +96,6 @@ const MyPage = () => {
         console.error('데이터를 가져오는 중 오류 발생:', error);
       }
     };
-
-    const fetchDepartments = async (schoolId, page) => {
-      try {
-        console.log('요청 데이터:', { schoolId, page, limit: 3000 });
-        const response = await axios.post('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/getDepartment', { schoolId, page, limit: 3000 });
-        
-        // response.data가 배열인지 확인하고, 배열이 아닐 경우 빈 배열로 초기화
-        const departmentsData = Array.isArray(response.data) ? response.data : [];
-        
-        const formattedData = departmentsData.map(department => ({
-          학과명: department.학과명 || '알 수 없음'  // 학과명이 없는 경우 기본값 설정
-        }));
-    
-        if (page === 1) {
-          setDepartments(formattedData);
-        } else {
-          setDepartments((prevDepartments) => [...prevDepartments, ...formattedData]);
-        }
-      } catch (error) {
-        console.error('데이터를 가져오는 중 오류 발생:', error);
-      }
-    };
-    
-    // departmentOptions 생성 시 undefined 처리
-    const departmentOptions = departments.map((department) => ({
-      value: department.학과명 || '알 수 없음',
-      label: department.학과명 || '알 수 없음'
-    }));
     
     
     const handleOfficeChange = (selectedOption) => {
@@ -146,10 +112,6 @@ const MyPage = () => {
       } else {
         console.error("선택된 학교 데이터를 찾을 수 없습니다.");
       }
-    };
-
-    const handleDepartmentChange = (selectedOption) => {
-      setSelectedDepartment(selectedOption);
     };
     
     const getEmailFromSessionStorage = () => {
