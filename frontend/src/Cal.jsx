@@ -126,10 +126,10 @@ function Cal() {
     const handleEat = () => {
       const today = new Date();
       setCurrentYear(today.getFullYear());
-      setCurrentMonth(today.getMonth());
-      setCurrentDay(today.getDay());
-      navigate("/Eat")
-      console.log(today, currentYear, currentMonth);
+      setCurrentMonth(today.getMonth() + 1);
+      setCurrentDay(today.getDate());
+      navigate("/Eat");
+      console.log(today, today.getFullYear(), today.getMonth() + 1, today.getDate());
     }
 
     useEffect(() => {
