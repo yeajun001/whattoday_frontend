@@ -143,7 +143,7 @@ const MyPage = () => {
           setClass(data.Class); // 반 상태 업데이트
           setNum(data.num); // 번호 상태 업데이트
           setName(data.Name); // name 상태 업데이트, null 값을 빈 문자열로 대체
-          setProfileImage(data.photoURL); // photoURL 상태 업데이트
+          setProfileImage(data.photoURL || null_image); // photoURL 상태 업데이트
         } else {
           console.error('데이터가 없습니다:', data);
         }
@@ -234,7 +234,7 @@ const MyPage = () => {
           // JSON 응답에서 imagePath를 받아와서 설정
           const imageURL = response.data.imagePath;
           console.log(imageURL);
-          setProfileImage(imageURL);
+          setProfileImage(imageURL || null_image);
         } catch (error) {
           console.error('Error fetching profile image:', error);
         }
