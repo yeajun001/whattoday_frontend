@@ -114,18 +114,18 @@ const MyPage = () => {
     const getEmailFromSessionStorage = () => {
       const googleUserEmail = sessionStorage.getItem('googleUseremail');
       const githubUserEmail = sessionStorage.getItem('githubUseremail');
-      const Email = sessionStorage.getItem('email');
+      const defaultEmail = sessionStorage.getItem('email');
     
       console.log('Google User Email:', googleUserEmail); // 디버깅 용도
       console.log('GitHub User Email:', githubUserEmail); // 디버깅 용도
-      console.log('Email', Email);
+      console.log('Email', defaultEmail);
     
       if (googleUserEmail) {
         return googleUserEmail;
       } else if (githubUserEmail) {
         return githubUserEmail;
-      } else if (Email) {
-        return Email;
+      } else if (defaultEmail) {
+        return defaultEmail;
       } else {
         console.error('오류 발생: 세션 스토리지에 이메일이 없습니다.');
         return null;
