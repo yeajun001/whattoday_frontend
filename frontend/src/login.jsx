@@ -77,7 +77,7 @@ const SocialLogin = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/login', {
+      const response = await fetch('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/defaultlogin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
