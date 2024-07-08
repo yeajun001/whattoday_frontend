@@ -4,8 +4,9 @@ import styles from './main.module.css';
 function Main() {
     const navigate = useNavigate()
 
-    const googlelogincheck = sessionStorage.getItem('googlelogincheck')
-    const githublogincheck = sessionStorage.getItem('githublogincheck')
+    const googlelogincheck = sessionStorage.getItem('googlelogincheck');
+    const githublogincheck = sessionStorage.getItem('githublogincheck');
+    const email = sessionStorage.getItem('email');
     
     return (
         <div>
@@ -13,7 +14,7 @@ function Main() {
                 <div className={styles['head-box']}>
                     <div className={styles['head-text']} onClick={() => navigate("/")}><div className={styles['head-text-img']}></div><div className={styles.click}>오늘 뭐해?</div></div>
                     <div className={styles['header-right-text-box']}>
-                        <div className={styles['header-right-text']} onClick={googlelogincheck == null && githublogincheck == null ? () => navigate("/loginmain") : () => navigate("/mainlin") }><div className={styles.click}>로그인</div></div>
+                        <div className={styles['header-right-text']} onClick={googlelogincheck == null && githublogincheck == null && email == null ? () => navigate("/loginmain") : () => navigate("/mainlin") }><div className={styles.click}>로그인</div></div>
                     </div>
                 </div>
             </header>

@@ -84,9 +84,10 @@ const SocialLogin = () => {
         },
         body: JSON.stringify({ email, password })
       });
-
+  
       if (response.ok) {
         // 로그인 성공 처리
+        sessionStorage.setItem('email', email);
         navigate('/mainlin');
       } else {
         // 로그인 실패 처리
