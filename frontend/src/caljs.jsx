@@ -69,9 +69,7 @@ const Calendar = () => {
     };
   
     const fetchData = async () => {
-      const googleUserEmail = sessionStorage.getItem('googleUseremail');
-      const githubUserEmail = sessionStorage.getItem('githubUseremail');
-      const email = googleUserEmail || githubUserEmail; // 어느 이메일이든 사용
+      const email = getEmailFromSessionStorage();
   
       if (!email) {
         console.error("이메일이 없습니다.");
