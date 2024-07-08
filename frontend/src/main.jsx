@@ -46,7 +46,7 @@ function Main() {
                                 </div>
                             </div>
                         </li>
-                        <li className={styles["li-class"]}>
+                        <li className={styles["li-class"]} onClick={googlelogincheck == null && githublogincheck == null ? () => navigate("/loginmain") : () => navigate("/cal")}>
                             <div className={styles["li-class-text-box"]}>
                                 <div className={styles["li-class-title"]}>
                                     시간표
@@ -56,7 +56,7 @@ function Main() {
                                 </div>
                             </div>
                         </li>
-                        <li className={styles["li-eat"]}>
+                        <li className={styles["li-eat"]} onClick={googlelogincheck == null && githublogincheck == null ? () => navigate("/loginmain") : () => navigate("/cal")}>
                             <div className={styles["li-eat-text-box"]}>
                                 <div className={styles["li-eat-title"]}>
                                     급식표
