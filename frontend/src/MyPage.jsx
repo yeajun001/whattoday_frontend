@@ -105,7 +105,9 @@ const MyPage = () => {
 
     const fetchDepartments = async (schoolId, page) => {
       try {
+        console.log('요청 데이터:', { schoolId, page, limit: 3000 });
         const response = await axios.post('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/getDepartment', { schoolId, page, limit: 3000 });
+        
         const formattedData = response.data.map(department => ({
           학과명: department.학과명
         }));
@@ -121,6 +123,7 @@ const MyPage = () => {
     };
     
     const departmentOptions = departments.map((department) => ({ value: department.학과명, label: department.학과명 }));
+    
     
     
     
