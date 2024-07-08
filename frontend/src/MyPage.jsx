@@ -234,7 +234,7 @@ const MyPage = () => {
           // JSON 응답에서 imagePath를 받아와서 설정
           const imageURL = response.data.imagePath;
           console.log(imageURL);
-          setProfileImage(imageURL || null_image);
+          setProfileImage(imageURL);
         } catch (error) {
           console.error('Error fetching profile image:', error);
         }
@@ -261,7 +261,7 @@ const MyPage = () => {
                         {profileImage && (
                           <img
                               className={styles['main-profile-image']}
-                              src={profileImage}
+                              src={profileImage || null_image}
                               alt='profile_image'
                           />
                         )}
@@ -287,7 +287,7 @@ const MyPage = () => {
                       {profileImage && (
                           <img
                             className={styles['main-profile-image']}
-                            src={profileImage}
+                            src={profileImage || null_image}
                             alt='profile_image'
                             onClick={handleOpenModal}
                           />
