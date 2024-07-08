@@ -155,8 +155,9 @@ const Schedule = () => {
         const today = new Date();
         setCurrentYear(today.getFullYear());
         setCurrentMonth(today.getMonth());
-        setCurrentDay(today.getDay());
-        navigate("/Eat")
+        setCurrentDay(today.getDate());
+        navigate("/Eat");
+        console.log(today, today.getFullYear(), today.getMonth(), today.getDate());
       }
 
       const handleCal = () => {
