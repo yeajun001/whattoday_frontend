@@ -74,6 +74,12 @@ const MyPage = () => {
         fetchSchools(selectedOffice.value, 1);
       }
     }, [selectedOffice]);
+
+    useEffect(() => {
+      if (selectedSchool) {
+        fetchDepartments(selectedSchool.value, 1);
+      }
+    }, [selectedSchool]);
     
     useEffect(() => {
       console.log("선택된 학교 상태 업데이트:", selectedSchool);
@@ -99,7 +105,7 @@ const MyPage = () => {
 
     const fetchDepartments = async (schoolId, page) => {
       try {
-        const response = await axios.post('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/getDepartments', { schoolId, page, limit: 3000 });
+        const response = await axios.post('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/getDepartment', { schoolId, page, limit: 3000 });
         const formattedData = response.data.map(department => ({
           학과명: department.학과명
         }));
