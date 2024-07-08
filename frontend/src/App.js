@@ -7,23 +7,11 @@ import MyPage from "./MyPage";
 import Cal from "./Cal";
 import Schedule from "./Schedule";
 import Eat from "./Eat";
-import reloadEmitter from './reloadEmitter';
 
 const App = () => {
-    useEffect(() => {
-        const handleReload = () => {
-            window.location.reload();
-        };
-
-        reloadEmitter.on('reload', handleReload);
-
-        return () => {
-            reloadEmitter.off('reload', handleReload);
-        };
-    }, []);
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/">
             <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/mainlin" element={<Mainlin />} />
