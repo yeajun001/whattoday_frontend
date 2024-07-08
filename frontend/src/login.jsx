@@ -73,17 +73,26 @@ const SocialLogin = () => {
   }, []);
 
   return (
-    <div className={styles["main-login-text-box-right"]}>
-      <div className={styles["logo-container"]}>
-        <div className={styles["github-logo"]} onClick={loginWithGithub}>
-          <div className={styles["logo-text"]}>Github</div>
-        </div>
-        <div className={styles["ban"]}></div>
-        <div className={styles["google-logo"]} onClick={loginWithGoogle}>
-          <div className={styles["logo-text"]}>Google</div>
-        </div>
-      </div>
+  <div className={styles["main-login-text-box-right"]}>
+    <div className={styles["login-input-box"]}>
+      <input type="text" className={styles["login-input"]} placeholder="이메일" />
+      <input type="password" className={styles["login-input"]} placeholder="비밀번호" />
+      <div className={styles["button-container"]}>
+        <button className={styles["signin-button"]} onClick={() => navigate("/Signin")}>회원가입</button>
+        <button className={styles["login-button"]}>로그인</button>
     </div>
+  </div>
+  <div className={styles["logo-container"]}>
+      <div className={styles["github-logo"]} onClick={loginWithGithub}>
+      <div className={styles["logo-text"]}>Github</div>
+    </div>
+    <div className={styles["ban"]}></div>
+    <div className={styles["google-logo"]} onClick={loginWithGoogle}>
+      <div className={styles["logo-text"]}>Google</div>
+    </div>
+  </div>
+</div>
+
   );
 };
 export default SocialLogin;
