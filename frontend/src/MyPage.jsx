@@ -99,7 +99,7 @@ const MyPage = () => {
 
     const fetchDepartments = async (schoolId, page) => {
       try {
-        const response = await axios.post('https://example.com/getDepartments', { schoolId, page, limit: 3000 });
+        const response = await axios.post('https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/getDepartments', { schoolId, page, limit: 3000 });
         const formattedData = response.data.map(department => ({
           학과명: department.학과명
         }));
