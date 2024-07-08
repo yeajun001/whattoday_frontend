@@ -140,7 +140,7 @@ const Calendar = () => {
         }
 
         days.push(
-          <div key={`current${i}`} className={dayClass} onClick={() => handleDayClick(i)}>
+          <div key={`current${i}`} className={`${dayClass} ${styles.clicktheday}`} onClick={() => handleDayClick(i)}>
             <span>{i}</span>
             <div className={styles.schedule}>
               {schoolDaySchedules.map((schedule, index) => {

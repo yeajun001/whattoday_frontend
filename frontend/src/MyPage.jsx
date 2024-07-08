@@ -6,6 +6,7 @@ import axios from 'axios';
 import Select from 'react-select';
 import './MyPage.css'
 import ProfileModal from './ProfileModal';
+import null_image from './asset/logo.png'
 
 
 const MyPage = () => {
@@ -233,7 +234,7 @@ const MyPage = () => {
           // JSON 응답에서 imagePath를 받아와서 설정
           const imageURL = response.data.imagePath;
           console.log(imageURL);
-          setProfileImage(imageURL);
+          setProfileImage(imageURL || null_image);
         } catch (error) {
           console.error('Error fetching profile image:', error);
         }
