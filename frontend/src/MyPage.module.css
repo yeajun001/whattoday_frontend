@@ -344,8 +344,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 800px;
-  height: 280px;
+  width: 1000px;
+  height: 300px;
 }
 
 .canceltext {
@@ -453,6 +453,15 @@
   font-size: 20px;
   color: #0075FF;
   margin-left: 20px;
+  margin-right: 5px;
+}
+
+.department {
+  font-family: 'Freesentation-5Medium', sans-serif;
+  font-size: 20px;
+  color: #0075FF;
+  margin-left: 20px;
+  margin-right: 5px;
 }
 
 .school-change {

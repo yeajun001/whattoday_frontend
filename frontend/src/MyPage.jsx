@@ -47,6 +47,8 @@ const MyPage = () => {
       const [name, setName] = useState('');
       const [selectedSchool, setSelectedSchool] = useState({ value: '', code: '' });
       const [profile, setProfile] = useState(null);
+      const [departments, setDepartments] = useState([]);
+      const [selectedDepartment, setSelectedDepartment] = useState(null);
 
 
     const handleLogout = () => {
@@ -94,6 +96,27 @@ const MyPage = () => {
         console.error('데이터를 가져오는 중 오류 발생:', error);
       }
     };
+
+    const fetchDepartments = async (schoolId, page) => {
+      try {
+        const response = await axios.post('https://example.com/getDepartments', { schoolId, page, limit: 3000 });
+        const formattedData = response.data.map(department => ({
+          학과명: department.학과명
+        }));
+    
+        if (page === 1) {
+          setDepartments(formattedData);
+        } else {
+          setDepartments((prevDepartments) => [...prevDepartments, ...formattedData]);
+        }
+      } catch (error) {
+        console.error('데이터를 가져오는 중 오류 발생:', error);
+      }
+    };
+    
+    const departmentOptions = departments.map((department) => ({ value: department.학과명, label: department.학과명 }));
+    
+    
     
     const handleOfficeChange = (selectedOption) => {
       setSelectedOffice(selectedOption);
@@ -109,6 +132,10 @@ const MyPage = () => {
       } else {
         console.error("선택된 학교 데이터를 찾을 수 없습니다.");
       }
+    };
+
+    const handleDepartmentChange = (selectedOption) => {
+      setSelectedDepartment(selectedOption);
     };
     
     const getEmailFromSessionStorage = () => {
@@ -344,19 +371,31 @@ const MyPage = () => {
                                             value={selectedOffice}
                                             placeholder="--교육청을 선택해주세요--"
                                           />
-
                                       <label htmlFor="school" className={styles.schoolname}>학교명:</label>
-                                      <Select
-                                          name="school"
-                                          options={schoolOptions}
-                                          onChange={handleSchoolChange}
-                                          className="school"
-                                          classNamePrefix="school"
-                                          value={selectedSchool ? { value: selectedSchool.value, label: selectedSchool.value } : null}
-                                          placeholder="--학교를 선택해주세요--"
-                                          isSearchable
-                                        />
+                                          <Select
+                                              name="school"
+                                              options={schoolOptions}
+                                              onChange={handleSchoolChange}
+                                              className="school"
+                                              classNamePrefix="school"
+                                              value={selectedSchool ? { value: selectedSchool.value, label: selectedSchool.value } : null}
+                                              placeholder="--학교를 선택해주세요--"
+                                              isSearchable
+                                            />
+                                      <label htmlFor="department" className={styles.department}>학과명:</label>
+                                          <Select
+                                            name="department"
+                                            options={selectedSchool ? departmentOptions[selectedSchool.value] : []}
+                                            onChange={handleDepartmentChange}
+                                            className="department"
+                                            classNamePrefix="department"
+                                            value={selectedDepartment}
+                                            placeholder="--학과를 선택해주세요--"
+                                            isSearchable
+                                            isDisabled={!selectedSchool} // 학교가 선택되지 않으면 비활성화
+                                          />
                                       </div>
+                                      
                                     <div className={styles['school-info-container']}>
                                       <label htmlFor="grade" className={styles.gradename}>학년:</label>
                                       <select 
