@@ -207,7 +207,7 @@ const MyPage = () => {
     
     useEffect(() => {
       fetchData();
-    });
+    }, []);
     
     const textover = (text) => {
       return text && text.length >= 12 ? styles['small-font'] : '';
