@@ -4,12 +4,15 @@ import styles from './mainlin.module.css';
 import null_image from './asset/logo.png'
 import { getAuth } from 'firebase/auth';
 import axios from 'axios';
+import { useCal } from './calContext';
 
 
 function Mainlin() {
     const navigate = useNavigate();
 
     const [showDropdown, setShowDropdown] = useState(false);
+
+    const { setCurrentDay, setCurrentMonth, setCurrentYear } = useCal();
 
     const handleLogout = () => {
       sessionStorage.clear();
