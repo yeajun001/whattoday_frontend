@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './MyPage.module.css';
 import { useNavigate } from 'react-router-dom';
-import null_image from './asset/no-image.svg'
 import { getAuth } from 'firebase/auth';
 import axios from 'axios';
 import Select from 'react-select';
@@ -208,7 +207,7 @@ const MyPage = () => {
     
     useEffect(() => {
       fetchData();
-    }, []);
+    });
     
     const textover = (text) => {
       return text && text.length >= 12 ? styles['small-font'] : '';
@@ -311,7 +310,7 @@ const MyPage = () => {
                               onChange={(e) => setName(e.target.value)}
                               className={styles['main-name-print']}
                             />
-                            <button onClick={handleSubmit} className={styles.updateButton}>이름 변경</button>
+                            <div onClick={handleSubmit} className={styles.updateButton}>이름 변경</div>
                         <div className={styles['horizontal-line']}></div>
                             </div>
                         <div className={styles['main-school']}>

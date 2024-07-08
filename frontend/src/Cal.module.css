@@ -248,6 +248,7 @@ transform: translate(0, -2px);
   background-color: #FAFAFA;
   position: relative;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .cal-personal-schedule-date {
@@ -311,6 +312,7 @@ transform: translate(0, -2px);
 .angle-left, .angle-right {
   display: flex;
   font-size: 0.9rem;
+  cursor: pointer;
 }
 
 .angle-left {
@@ -366,6 +368,7 @@ transform: translate(0, -2px);
   gap: 20px;
   margin-top: 20px;
   margin-left: 30px;
+  cursor: pointer;
 }
 
 .days .day {
@@ -598,6 +601,7 @@ transform: translate(0, -2px);
   left: 200px;
   top: 400px;
   background-color: #4260FF;
+  cursor: pointer;
 }
 
 .cancel {
@@ -614,6 +618,7 @@ transform: translate(0, -2px);
   left: 400px;
   top: 400px;
   background-color: #4260FF;
+  cursor: pointer;
 }
 
 .checktext {

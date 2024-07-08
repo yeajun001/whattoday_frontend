@@ -280,6 +280,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .bottom-button {
@@ -514,6 +516,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.updateButton:hover {
+  background-color: #01499b;
+}
+
+.school-select-button:hover {
+  background-color: #01499b;
 }
 
 

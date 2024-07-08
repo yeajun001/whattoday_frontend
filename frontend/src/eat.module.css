@@ -158,12 +158,14 @@
     margin-right: 10px;
     font-size: 20px;
     margin-top: 4px;
+    cursor: pointer;
 }
 
 .angle-right {
     margin-left: 10px;
     font-size: 20px;
     margin-top: 4px;
+    cursor: pointer;
 }
 
 .eat-value {
