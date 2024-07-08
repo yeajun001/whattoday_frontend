@@ -172,10 +172,7 @@ const Schedule = () => {
         <div>
             <header className={styles.all}>
                 <div className={styles['head-box']}>
-                    <div className={styles['head-text']}>
-                    <div className={styles["head-text-img"]}></div>
-                    <a href="/mainlin" className={styles.click}>오늘 뭐해?</a>
-                </div>
+                  <div className={styles['head-text']} onClick={() => navigate("/mainlin")}><div className={styles['head-text-img']}></div><div className={styles.click}>오늘 뭐해?</div></div>
                     <div className={styles['header-right-text-box']}>
                         <div className={styles['header-right-text']} onClick={handleCal}><div className={styles.click}>캘린더</div></div>
                         <div className={styles['header-right-text']} onClick={handleEat}><div className={styles.click}>급식표</div></div>
