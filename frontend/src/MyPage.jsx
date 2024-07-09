@@ -47,6 +47,8 @@ const MyPage = () => {
       const [name, setName] = useState('');
       const [selectedSchool, setSelectedSchool] = useState({ value: '', code: '' });
       const [profile, setProfile] = useState(null);
+      const [departmentOptions, setDepartmentOptions] = useState([]);
+      const [selectedDepartment, setSelectedDepartment] = useState(null);
 
 
     const handleLogout = () => {
@@ -148,7 +150,7 @@ const MyPage = () => {
           setClass(data.Class); // 반 상태 업데이트
           setNum(data.num); // 번호 상태 업데이트
           setName(data.Name); // name 상태 업데이트, null 값을 빈 문자열로 대체
-          setProfileImage(data.photoURL || null_image); // photoURL 상태 업데이트
+          setProfileImage(data.photoURL); // photoURL 상태 업데이트
         } else {
           console.error('데이터가 없습니다:', data);
         }
@@ -247,6 +249,40 @@ const MyPage = () => {
     
       fetchProfileImage();
     }, []);
+
+    useEffect(() => {
+      if (selectedSchool) {
+        const fetchDepartments = async () => {
+          try {
+            console.log(`Fetching departments for school ID: ${selectedSchool.value}`); // 디버깅 용도
+            const response = await axios.get(`http://localhost:3001/departments`, {
+              params: {
+                office: selectedOffice.value, // 실제 값으로 대체해야 합니다.
+                schoolCode: selectedSchool.value
+              }
+            });
+            console.log('서버 응답:', response.data); // 디버깅 용도
+            const formattedData = response.data.map(department => ({
+              label: department.학과명, // label로 변경
+              value: department.행정표준코드 // value로 변경
+            }));
+            console.log('Formatted Data:', formattedData); // 디버깅 용도
+            setDepartmentOptions(formattedData);
+          } catch (error) {
+            console.error('학과 정보를 불러오는 중 오류가 발생했습니다.', error);
+          }
+        };
+    
+        fetchDepartments();
+      } else {
+        setDepartmentOptions([]);
+      }
+    }, [selectedSchool, selectedOffice]); 
+    
+    
+    const handleDepartmentChange = (selectedOption) => {
+      setSelectedDepartment(selectedOption);
+    };
     
 
     return (
@@ -358,15 +394,15 @@ const MyPage = () => {
                                             />
                                       <label htmlFor="department" className={styles.department}>학과명:</label>
                                           <Select
-                                            // name="department"
-                                            // options={selectedSchool ? departmentOptions[selectedSchool.value] : []}
-                                            // onChange={handleDepartmentChange}
-                                            // className="department"
-                                            // classNamePrefix="department"
-                                            // value={selectedDepartment}
-                                            // placeholder="--학과를 선택해주세요--"
-                                            // isSearchable
-                                            // isDisabled={!selectedSchool}
+                                            name="department"
+                                            options={departmentOptions}
+                                            onChange={handleDepartmentChange}
+                                            className="department"
+                                            classNamePrefix="department"
+                                            value={selectedDepartment ? { value: selectedDepartment.value, label: selectedDepartment.value } : null}
+                                            placeholder="--학과를 선택해주세요--"
+                                            isSearchable
+                                            isDisabled={!selectedSchool}
                                           />
                                       </div>
                                       
