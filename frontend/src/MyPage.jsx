@@ -255,9 +255,9 @@ const MyPage = () => {
         const fetchDepartments = async () => {
           try {
             console.log(`Fetching departments for school ID: ${selectedSchool.value}`); // 디버깅 용도
-            const response = await axios.get(`http://localhost:3001/departments`, {
+            const response = await axios.get(`https://port-0-whattoday-deploy-backend-ly7hfh5b552425a2.sel5.cloudtype.app/departments`, {
               params: {
-                office: selectedOffice.value, // 실제 값으로 대체해야 합니다.
+                office: selectedOffice.value,
                 schoolCode: selectedSchool.value
               }
             });
